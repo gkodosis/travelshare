@@ -1,0 +1,170 @@
+.one-post {
+ margin: 0px 0px 25px 0px;
+}
+.bd-radius {
+ border-radius: 4px;
+ background-color: #ffffff;
+ box-shadow: 0 1px 7px rgba(0,0,0,0.05);
+ border: 1px solid rgba(0,0,0,0.09) !important;
+}
+.bd-radius .img-height {
+ width: 100% !important;
+ height: auto !important;
+}
+.bd-radius .img-height .video {
+ width: 100% !important;
+ height: auto !important;
+}
+.bd-radius .post-post-content {
+ padding: 10px 15px 10px 15px !important;
+}
+.bd-radius .post-post-content.postMetaInline-media {
+ width: 100%;
+ border-top: 1px solid #eee;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-left a {
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ line-height: normal;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-left a .media-object {
+ border-radius: 50%;
+ width: 46px !important;
+ height: 46px !important;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-body {
+ display: table-cell;
+ vertical-align: middle;
+ font-size: 14px;
+ line-height: 1.4;
+ text-rendering: auto;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-body .media-heading {
+ font-weight: 400;
+ color: #000;
+ font-size: 17px;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-body .media-heading-muted {
+ color: rgba(0,0,0,0.44) !important;
+ font-size: 12px;
+ display: flex;
+}
+.bd-radius .post-post-content.postMetaInline-media .media .media-body .media-heading-muted .fa-map-marker {
+ font-size: 14px;
+ margin-top: 2px;
+}
+.bd-radius .post-post-content.postMetaInline-media .nav li .timed {
+ font-size: 15px;
+ color: #adadad;
+}
+.bd-radius .post-post-content.postMetaInline-media .nav li .icondisplay {
+ display: flex;
+}
+.bd-radius .post-post-content.postMetaInline-media .nav li .icondisplay span {
+ font-size: 16px;
+ color: #adadad;
+}
+.bd-radius .post-post-content.postMetaInline-media .nav li .icondisplay .line {
+ width: 1px !important;
+ height: 20px !important;
+ background-color: #bababa;
+ margin: 2px 5px 0px 5px;
+}
+.posttitle-font {
+ font-size: 23px;
+ font-weight: 600;
+}
+.postdesc-font {
+ font-size: 17px;
+ word-spacing: 2px;
+ font-weight: 400;
+}
+.subpostMetaInline-media {
+ width: 100%;
+ border-top: 1px solid #eee;
+ padding: 15px 15px 15px 15px !important;
+}
+.subpostMetaInline-media .media .media-left a {
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ line-height: normal;
+}
+.subpostMetaInline-media .media .media-left a .media-object {
+ border-radius: 50%;
+ width: 46px !important;
+ height: 46px !important;
+}
+.subpostMetaInline-media .media .media-body {
+ display: table-cell;
+ vertical-align: middle;
+ font-size: 14px;
+ line-height: 1.4;
+ text-rendering: auto;
+}
+.subpostMetaInline-media .media .media-body .media-heading {
+ font-weight: 400;
+ color: #000;
+ font-size: 17px;
+}
+.subpostMetaInline-media .media .media-body .media-heading-muted {
+ color: rgba(0,0,0,0.44) !important;
+ font-size: 12px;
+ display: flex;
+}
+.subpostMetaInline-media .media .media-body .media-heading-muted .fa-map-marker {
+ font-size: 14px;
+ margin-top: 2px;
+}
+.subpostMetaInline-media .media .media-body .form-control.commentpostinput {
+ border-radius: 0px;
+ padding: 6px 35px 6px 6px;
+}
+.subpostMetaInline-media .nav li .timed {
+ font-size: 15px;
+ color: #adadad;
+}
+.subpostMetaInline-media .nav li .icondisplay {
+ display: flex;
+ float: right;
+}
+.subpostMetaInline-media .nav li .icondisplay span {
+ font-size: 16px;
+ color: #adadad;
+}
+.subpostMetaInline-media .nav li .icondisplay .line {
+ width: 1px !important;
+ height: 20px !important;
+ background-color: #bababa;
+}
+
+.readmore {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ text-align: center;
+ margin: 0;
+ padding: 42px 0px 0px 0px;
+ background: -webkit-linear-gradient(rgba(255,255,255,0) 0%,#ffffff 100%);
+ background-image: -moz-linear-gradient(rgba(255,255,255,0) 0%,#ffffff 100%);
+ background-image: -o-linear-gradient(rgba(255,255,255,0) 0%,#ffffff 100%);
+ background-image: linear-gradient(rgba(255,255,255,0) 0%,#ffffff 100%);
+ background-image: -ms-linear-gradient(rgba(255,255,255,0) 0%,#ffffff 100%);
+}
+.readmore .btn-default:hover {
+ color: #FFF;
+ background-color: #ffcd13;
+ border-color: #f9e69d;
+}
+.readmore .btn-default .a-dec:hover {
+ color: #FFF;
+}
+.backbtn {
+ border-radius: 8px 8px 0px 0px !important;
+ box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
+}
+.a-dec {
+ text-decoration: none !important;
+}

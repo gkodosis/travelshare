@@ -1,0 +1,10 @@
+.btn-glyphicon {
+    padding:8px;
+    background:#ffffff;
+    margin-right:4px;
+}
+.icon-btn {
+    position: fixed; bottom: 5px; right: 5px;
+
+    border-radius:50px;
+}
