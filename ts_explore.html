@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>TravelShare</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Style for the button -->
+  <link href="css/buttonmech.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="ts_index.html" style ="font-weight: bold; font-size: 1.38rem;">TravelShare</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ts_index.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ts_explore.html">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ts_contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  data-toggle="modal" data-target="#signUpModal">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+
+          <!-- Card Columns Example Social Feed-->
+          <div class="mb-0 mt-4">
+            <i class="fa fa-newspaper-o"></i> News Feed</div>
+          <hr class="mt-2">
+          <div class="card-columns">
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+        				<div class="media-left media-top">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/g.jpg" class="media-object thumbnail" alt="member1">
+        				</div>
+        				<div class="media-body">
+        					<h3 class="media-heading"><small>&nbsp;George Gerrard</small></h3>
+        					<p>&nbsp;&nbsp;Travelling to London, United Kindom at 20/12/2017.&nbsp;<font color="green">#available</font><p>
+        				</div>
+        			</div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+        				<div class="media-left media-top">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/n.jpg" class="media-object thumbnail" alt="member2">
+        				</div>
+        				<div class="media-body">
+        					<h3 class="media-heading"><small>&nbsp;Jason Stoke</small></h3>
+        					<p>&nbsp;&nbsp;Travelling to Berlin, Germany at 27/12/2017.&nbsp;<font color="green">#available</font><p>
+        				</div>
+        			</div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 46 mins ago</div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+                <div class="media-left media-top">
+                  <img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/w.jpg" class="media-object thumbnail" alt="member2">
+                </div>
+                <div class="media-body">
+                  <h3 class="media-heading"><small>&nbsp;Sophia Fischer</small></h3>
+                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="green">#available</font><p>
+                </div>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 1 hr ago</div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+        				<div class="media-left media-top">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/a.jpg" class="media-object thumbnail" alt="member1">
+        				</div>
+        				<div class="media-body">
+        					<h3 class="media-heading"><small>&nbsp;Christine Evans</small></h3>
+        					<p>&nbsp;&nbsp;Travelling to Lisbon, Portugal at 09/04/2018.&nbsp;<font color="red">#unavailable</font><p>
+        				</div>
+        			</div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+        				<div class="media-left media-top">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/cc.jpg" class="media-object thumbnail" alt="member1">
+        				</div>
+        				<div class="media-body">
+        					<h3 class="media-heading"><small>&nbsp;John Shelby</small></h3>
+        					<p>&nbsp;&nbsp;Currently at Barcelona, Spain.&nbsp;<font color="green">#available</font><p>
+        				</div>
+        			</div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+            </div>
+            <!-- Example Social Card-->
+            <div class="card mb-3">
+              <div class="media">
+                <div class="media-left media-top">
+                  <img src="http://ism.dmst.aueb.gr/ismgroup55/ts/img/t.jpg" class="media-object thumbnail" alt="member2">
+                </div>
+                <div class="media-body">
+                  <h3 class="media-heading"><small>&nbsp;Frank Milner</small></h3>
+                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="blue">#partly_available</font><p>
+                </div>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Message</a>
+              </div>
+              <div class="card-footer small text-muted">Posted 1 hr ago</div>
+            </div>
+          <!-- /Card Columns-->
+        </div>
+        <div class="col-lg-4">
+          <nav class="navbar fixed-bottom navbar-light bg-light" style="background-color:  #000;">
+                <a class="btn icon-btn btn-primary btn pull-right" data-toggle="modal" data-target="#postModal">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Make Post
+                </a>
+              <p></p>
+              <p></p>
+              <p></p>
+
+          </nav>
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <!-- SignUp Modal-->
+    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create A Post</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+
+              <label for="exampleInputUser1">Destination</label>
+              <input class="form-control" id="exampleInputDestiantion" type="destinantion" aria-describedby="userHelp" placeholder="What is your destination">
+
+            </div>
+            <div class="form-group">
+
+              <label for="exampleInputPassword1">Date</label>
+              <div class="input-daterange input-group" id="datepicker">
+                  <input type="text" class="input-sm form-control" name="from" placeholder="From date"/>
+                  <span class="input-group-addon">to</span>
+                  <input type="text" class="input-sm form-control" name="to" placeholder="To date"/>
+              </div>
+
+            </div>
+            <div class="form-group">
+
+              <label for="exampleInputPassword1">Luggage</label>
+              <input class="form-control" id="exampleInputPassword1" type="password" placeholder="How much free space">
+            </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-primary btn-block" href="ts_index.html">Post</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SignUp Modal-->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="exampleInputName">First name</label>
+                  <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleInputLastName">Last name</label>
+                  <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputUser">Username</label>
+              <input class="form-control" id="exampleInputUser" type="user" aria-describedby="userHelp" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleConfirmPassword">Confirm password</label>
+                  <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-primary btn-block" href="ts_login.html">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="ts_login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.min.js"></script>
+  </div>
+  <!-- Footer -->
+  <footer class="py-5 bg-light">
+    <div class="container">
+      <p class="m-0 text-center">Copyright &copy; TravelShare 2017</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</body>
+
+</html>
