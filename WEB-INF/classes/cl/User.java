@@ -1,18 +1,12 @@
-package cl;
-
 public class User {
 
 	private String username;
 	private String password;
-	private String firstName;
-	private String lastName;
 	private String email;
 
-	public User(String username, String password, String firstName, String lastName, String email) {
+	public User(String username, String password, String email) {
 		this.username = username;
 		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.email = email;
 	}
 
@@ -32,22 +26,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getfirstName() {
-			return firstName;
-	}
-
-	public void setfirstName(String firstName) {
-			this.firstName = firstName;
-	}
-
-	public String getlastName() {
-			return lastName;
-	}
-
-	public void setlastName(String lastName) {
-			this.lastName = lastName;
 	}
 
 	public String getEmail() {
