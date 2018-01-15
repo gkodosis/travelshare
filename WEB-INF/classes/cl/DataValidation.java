@@ -17,6 +17,12 @@ public class DataValidation {
 		return (name == null || name.length() < 3 ? false : true);
 
 	}
+	public boolean isDateValid(String date){
+		String dPattern = "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$";
+		java.util.regex.Pattern p = java.util.regex.Pattern.compile(dPattern);
+        java.util.regex.Matcher m = p.matcher(date);
+		return m.matches();
+	}
 
 	public boolean isValidEmailAddress(String email) {
 
