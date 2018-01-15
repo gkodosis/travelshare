@@ -120,6 +120,7 @@ public class PostController extends HttpServlet {
 			out.println("		  <p>&nbsp;</p>");
 
 			out.println("");
+	if(data.isNameValid(destination) && data.isDateValid(datepicker1)  && data.isDateValid(datepicker2)) {
 
 			out.println("	<div class='container'>");
 			out.println("			<div class='alert alert-success col-lg-12'><strong>You have sucessfully posted to TravelShare</strong>");
@@ -280,9 +281,32 @@ public class PostController extends HttpServlet {
 			out.println("          <!-- /Card Columns-->");
 			out.println("        </div>");
 
+		}else{
 
+				data.isNameValid(destination);
+				data.isDateValid(datepicker1);
+				data.isDateValid(datepicker2);
+				out.println("			<div class='alert alert-warning col-lg-12'>");
+				out.println("				<ol type='1'>");
+				if(!data.isNameValid(destination)){
+				out.println("					<li>The destination you chose is wrong. Please type it again.</li>");
+				}
+				if(data.isDateValid(datepicker1)) {
+				out.println("					<li>Wrong date input. The correct input is yyyy\\mm\\dd<\\li>");
+				}
+				if(data.isDateValid(datepicker2)) {
+				out.println("					<li>Wrong date input. The correct input is yyyy\\mm\\dd<\\li>");
+				}
 
+				out.println("				</ol>");
+				out.println("			</div>");
+				out.println("			<div class='form-group'>");
+				out.println("				<div class='col-md-6 col-md-offset-5' >");
+				out.println("					<a role='button' type='submit' class='btn btn-primary btn-lg' href='../ts_explore.jsp'><span class='glyphicon glyphicon-chevron-left'></span>Back to the feed</a>");
+				out.println("				</div>");
+				out.println("			</div>");
 
+		}
 
 			//	PostDAO pdao = new UserDAO();
 			//	Post post = new User(username, destination, datepicker1, datepicker2, luggage);
