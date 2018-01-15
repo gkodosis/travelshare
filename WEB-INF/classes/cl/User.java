@@ -1,9 +1,18 @@
+package cl;
+
 public class User {
 
 	private String username;
 	private String password;
 	private String email;
 
+	/**
+	 * Constructor
+	 *
+	 * @param username, String
+	 * @param password, String
+	 * @param email, String
+	 */
 	public User(String username, String password, String email) {
 		this.username = username;
 		this.password = password;

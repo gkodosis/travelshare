@@ -126,14 +126,14 @@ public class UserDAO {
 
 			stmt = con.prepareStatement(sqlquery);
 
-			String username = customer.getUsername();
-			String password = customer.getPassword();
-			String email = customer.getEmail();
+			String username = user.getUsername();
+			String password = user.getPassword();
+			String email = user.getEmail();
 
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			stmt.setString(3, email);
-			
+
 
 			stmt.executeUpdate();
 			stmt.close();
