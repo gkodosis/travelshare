@@ -132,7 +132,9 @@ public class RegisterController extends HttpServlet {
 				out.println("			<ul class='list-unstyled'>");
 				out.println("				<li><b><br>Username: </b>"+username+"</li>");
 				out.println("				<li><b>Email: </b>"+email+"</li>");
-				out.println("			</ul></div>");
+				out.println("			</ul>");
+				out.println("<p>Please Login<a href='../ts_login.jsp'> Here</a></p>");
+				out.println("</div>");
 
 				UserDAO udao = new UserDAO();
 				User user = new User(username, password, email);
