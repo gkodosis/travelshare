@@ -12,17 +12,24 @@ public class DataValidation {
 
 	}
 
-	public boolean isNameValid(String name) {
+	public boolean isDestinationValid(String destination) {
 
-		return (name == null || name.length() < 3 ? false : true);
+        String ePattern = "^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(destination);
 
+        return m.matches();
 	}
-	public boolean isDateValid(String date){
-		String dPattern = "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$";
-		java.util.regex.Pattern p = java.util.regex.Pattern.compile(dPattern);
+	public boolean isDateValid(String date) {
+
+        String ePattern = "^\\d{4}\\/\\d{2}\\/\\d{2}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(date);
-		return m.matches();
+
+        return m.matches();
 	}
+
+
 
 	public boolean isValidEmailAddress(String email) {
 
