@@ -128,6 +128,10 @@
 
 <div class="container theme-showcase" role="main">	
 
+		<% if(request.getAttribute("message") != null) { %>		
+			<div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %><a href="ts_forgot-password.jsp"> Forgot Password?</a></div>
+		<% } %>	
+
 		<form class="form-signin" method="post" action="ts_loginController.jsp">
 			<h2 class="form-signin-heading text-center" style="color:white;">Sign in</h2>
 			<label for="inputusername" class="sr-only">Username</label> 

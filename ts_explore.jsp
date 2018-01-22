@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="cl.*" %>
+<%@ page import="java.util.List" %>
 <%@ page errorPage="ts_error.jsp" %>
 
 <%
@@ -68,134 +69,43 @@ if(session.getAttribute("user-object") == null) {
 	</nav>
 	<!-- /.Fixed navbar -->
 
-          <!-- Card Columns Example Social Feed-->
+         	<!-- Card Columns Example Social Feed-->
           <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/g.jpg" class="media-object thumbnail" alt="member1">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;George Gerrard</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to London, United Kindom at 20/12/2017.&nbsp;<font color="green">#available</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/n.jpg" class="media-object thumbnail" alt="member2">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;Jason Stoke</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to Berlin, Germany at 27/12/2017.&nbsp;<font color="green">#available</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 46 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-                <div class="media-left media-top">
-                  <img src="http://ism.dmst.aueb.gr/ismgroup55/img/w.jpg" class="media-object thumbnail" alt="member2">
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><small>&nbsp;Sophia Fischer</small></h3>
-                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="green">#available</font><p>
-                </div>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/a.jpg" class="media-object thumbnail" alt="member1">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;Christine Evans</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to Lisbon, Portugal at 09/04/2018.&nbsp;<font color="red">#unavailable</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
 
+<%
+PostDAO pdao = new PostDAO();
+List<Post> posts = pdao.getPosts();
+Post ps = null;
+
+for(int i=0; i < posts.size(); i++) {
+	ps = posts.get(i);
+%>
             <!-- Example Social Card-->
             <div class="card mb-3">
               <div class="media">
         				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/cc.jpg" class="media-object thumbnail" alt="member1">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/member1.png" class="media-object thumbnail" alt="member1">
         				</div>
         				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;John Shelby</small></h3>
-        					<p>&nbsp;&nbsp;Currently at Barcelona, Spain.&nbsp;<font color="green">#available</font><p>
+        					<h3 class="media-heading"><small>&nbsp;<%= ps.getUsername()%></small></h3>
+        					<p>&nbsp;&nbsp;Travelling to <%= ps.getDest() %> at <%= ps.getDate1()%> until <%= ps.getDate2()%>.&nbsp;<font color="green">#<%= ps.getAvailability() %></font><p>
         				</div>
         			</div>
               <hr class="my-0">
               <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
+                <a class="mr-3 d-inline-block" href="#interestedModal"  data-toggle="modal" data-target="#interestedModal">
                   <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
                 <a class="mr-3 d-inline-block" href="#">
                   <i class="fa fa-fw fa-comment"></i>Message</a>
               </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              <div class="card-footer small text-muted">Posted some minutes ago</div>
             </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-                <div class="media-left media-top">
-                  <img src="http://ism.dmst.aueb.gr/ismgroup55/img/t.jpg" class="media-object thumbnail" alt="member2">
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><small>&nbsp;Frank Milner</small></h3>
-                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="blue">#partly_available</font><p>
-                </div>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div>
-          <!-- /Card Columns-->
-        </div>
+<%
+}
+%>
 
 
     <!-- /.container-fluid-->
@@ -246,127 +156,39 @@ if(session.getAttribute("user-object") == null) {
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/g.jpg" class="media-object thumbnail" alt="member1">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;George Gerrard</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to London, United Kindom at 20/12/2017.&nbsp;<font color="green">#available</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/n.jpg" class="media-object thumbnail" alt="member2">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;Jason Stoke</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to Berlin, Germany at 27/12/2017.&nbsp;<font color="green">#available</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 46 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-                <div class="media-left media-top">
-                  <img src="http://ism.dmst.aueb.gr/ismgroup55/img/w.jpg" class="media-object thumbnail" alt="member2">
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><small>&nbsp;Sophia Fischer</small></h3>
-                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="green">#available</font><p>
-                </div>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/a.jpg" class="media-object thumbnail" alt="member1">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;Christine Evans</small></h3>
-        					<p>&nbsp;&nbsp;Travelling to Lisbon, Portugal at 09/04/2018.&nbsp;<font color="red">#unavailable</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <div class="media">
-        				<div class="media-left media-top">
-        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/cc.jpg" class="media-object thumbnail" alt="member1">
-        				</div>
-        				<div class="media-body">
-        					<h3 class="media-heading"><small>&nbsp;John Shelby</small></h3>
-        					<p>&nbsp;&nbsp;Currently at Barcelona, Spain.&nbsp;<font color="green">#available</font><p>
-        				</div>
-        			</div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Message</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
 
+<%
+PostDAO pdao = new PostDAO();
+List<Post> posts = pdao.getPosts();
+Post ps = null;
+
+for(int i=0; i < posts.size(); i++) {
+	ps = posts.get(i);
+%>
             <!-- Example Social Card-->
             <div class="card mb-3">
               <div class="media">
-                <div class="media-left media-top">
-                  <img src="http://ism.dmst.aueb.gr/ismgroup55/img/t.jpg" class="media-object thumbnail" alt="member2">
-                </div>
-                <div class="media-body">
-                  <h3 class="media-heading"><small>&nbsp;Frank Milner</small></h3>
-                  <p>&nbsp;&nbsp;Travelling to Athens, Greece at 15/03/2018.&nbsp;<font color="blue">#partly_available</font><p>
-                </div>
-              </div>
+        				<div class="media-left media-top">
+        					<img src="http://ism.dmst.aueb.gr/ismgroup55/img/member1.png" class="media-object thumbnail" alt="member1">
+        				</div>
+        				<div class="media-body">
+        					<h3 class="media-heading"><small>&nbsp;<%= ps.getUsername()%></small></h3>
+        					<p>&nbsp;&nbsp;Travelling to <%= ps.getDest() %> at <%= ps.getDate1()%> until <%= ps.getDate2()%>.&nbsp;<font color="green">#<%= ps.getAvailability() %></font><p>
+        				</div>
+        			</div>
               <hr class="my-0">
               <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#interested">
+                <a class="mr-3 d-inline-block" href="#interestedModal"  data-toggle="modal" data-target="#interestedModal">
                   <i class="fa fa-fw fa-thumbs-up"></i>Interested</a>
                 <a class="mr-3 d-inline-block" href="#">
                   <i class="fa fa-fw fa-comment"></i>Message</a>
               </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
+              <div class="card-footer small text-muted">Posted some minutes ago</div>
             </div>
+<%
+}
+%>
+
           <!-- /Card Columns-->
 					<div class="col-lg-4">
 	          <nav class="navbar fixed-bottom navbar-light bg-light" style="background-color:  #000;">
@@ -396,7 +218,7 @@ if(session.getAttribute("user-object") == null) {
 	      </div>
 	    </div>
 		</div>
-		<div class="modal fade" id="#interested" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="interestedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	      <div class="modal-dialog" role="document">
 	        <div class="modal-content">
 	          <div class="modal-header">
@@ -406,7 +228,10 @@ if(session.getAttribute("user-object") == null) {
 	            </button>
 	          </div>
 	          <div class="modal-body">
-							The user was just informed that you are interested for his post.
+							The user will be informed that you are interested in his post.
+	        </div>
+					<div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	      </div>
 	    </div>
